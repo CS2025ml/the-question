@@ -106,7 +106,7 @@ noBtn.addEventListener("mouseover", () => {
   setInterval(createRose, 400);
 
   /* COUNTDOWN */
-  const valentines = new Date("February 14, 2026").getTime();
+  const valentines = new Date("February 14, 2027").getTime();
   setInterval(() => {
     const now = new Date().getTime();
     const diff = valentines - now;
