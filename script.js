@@ -38,35 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.remove("hidden");
       ambient.play();
     }, 1500);
-noBtn.style.position = "fixed"; // 🔥 THIS is the big fix
-noBtn.style.transition = "all 0.05s linear";
+  });
+
+  /* NO BUTTON RUNS */
+ noBtn.style.transition = "transform 0.6s ease";
 
 noBtn.addEventListener("mouseover", () => {
-  const maxX = window.innerWidth - noBtn.offsetWidth;
-  const maxY = window.innerHeight - noBtn.offsetHeight;
-
-  const x = Math.random() * maxX;
-  const y = Math.random() * maxY;
-
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
-
-  noBtn.style.transform = `rotate(${Math.random() * 360}deg) scale(${1 + Math.random()})`;
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 200 - 100;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
-document.addEventListener("mousemove", (e) => {
-  const rect = noBtn.getBoundingClientRect();
 
-  const dx = rect.left - e.clientX;
-  const dy = rect.top - e.clientY;
-
-  if (Math.abs(dx) < 120 && Math.abs(dy) < 120) {
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-  }
-});
   /* NO BUTTON CLICK */
   noBtn.addEventListener("click", () => {
     noPopup.classList.remove("hidden");
@@ -129,7 +111,7 @@ document.addEventListener("mousemove", (e) => {
     const now = new Date().getTime();
     const diff = valentines - now;
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    countdownEl.innerHTML = `⏳ ${days} (damn thats a long time) days until Valentine’s Day`;
+    countdownEl.innerHTML = `⏳ ${days} days until Valentine’s Day`;
   }, 1000);
 
 });
