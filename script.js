@@ -38,16 +38,20 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.remove("hidden");
       ambient.play();
     }, 1500);
-  });
-
-noBtn.style.position = "absolute";
-noBtn.style.transition = "transform 0.03s linear";
+noBtn.style.position = "fixed"; // 🔥 THIS is the big fix
+noBtn.style.transition = "all 0.05s linear";
 
 noBtn.addEventListener("mouseover", () => {
-  const x = (Math.random() - 0.5) * window.innerWidth;
-  const y = (Math.random() - 0.5) * window.innerHeight;
+  const maxX = window.innerWidth - noBtn.offsetWidth;
+  const maxY = window.innerHeight - noBtn.offsetHeight;
 
-  noBtn.style.transform = `translate(${x}px, ${y}px) scale(${1 + Math.random()}) rotate(${Math.random() * 360}deg)`;
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+
+  noBtn.style.transform = `rotate(${Math.random() * 360}deg) scale(${1 + Math.random()})`;
 });
 
   /* NO BUTTON CLICK */
