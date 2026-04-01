@@ -40,13 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1500);
   });
 
-  /* NO BUTTON RUNS */
- noBtn.style.transition = "transform 0.1s ease";
+noBtn.style.position = "absolute";
+noBtn.style.transition = "transform 0.03s linear";
 
 noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 900 - 500;
-  const y = Math.random() * 900 - 500;
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  const x = (Math.random() - 0.5) * window.innerWidth;
+  const y = (Math.random() - 0.5) * window.innerHeight;
+
+  noBtn.style.transform = `translate(${x}px, ${y}px) scale(${1 + Math.random()}) rotate(${Math.random() * 360}deg)`;
 });
 
   /* NO BUTTON CLICK */
