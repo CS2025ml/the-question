@@ -111,7 +111,7 @@ noBtn.addEventListener("mouseover", () => {
     const now = new Date().getTime();
     const diff = valentines - now;
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    countdownEl.innerHTML = `⏳ ${days} days until Valentine’s Day`;
+    countdownEl.innerHTML = `⏳ ${days} (damn thats a long time) days until Valentine’s Day`;
   }, 1000);
 
 });
