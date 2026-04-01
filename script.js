@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* NO BUTTON RUNS */
- noBtn.style.transition = "transform 0.2s ease";
+ noBtn.style.transition = "transform 0.1s ease";
 
 noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 500 - 300;
-  const y = Math.random() * 500 - 300;
+  const x = Math.random() * 900 - 500;
+  const y = Math.random() * 900 - 500;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
