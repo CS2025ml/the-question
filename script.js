@@ -53,7 +53,20 @@ noBtn.addEventListener("mouseover", () => {
 
   noBtn.style.transform = `rotate(${Math.random() * 360}deg) scale(${1 + Math.random()})`;
 });
+document.addEventListener("mousemove", (e) => {
+  const rect = noBtn.getBoundingClientRect();
 
+  const dx = rect.left - e.clientX;
+  const dy = rect.top - e.clientY;
+
+  if (Math.abs(dx) < 120 && Math.abs(dy) < 120) {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+});
   /* NO BUTTON CLICK */
   noBtn.addEventListener("click", () => {
     noPopup.classList.remove("hidden");
